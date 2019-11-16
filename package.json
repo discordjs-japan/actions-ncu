@@ -1,0 +1,19 @@
+{
+  "name": "actions-ncu",
+  "version": "1.0.0",
+  "description": "Update all dependencies.",
+  "main": "dist/index.js",
+  "repository": "https://github.com/discordjs-japan/actions-ncu.git",
+  "author": "Discord.js Japan",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^12.12.8",
+    "@zeit/ncc": "^0.20.5",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/exec": "^1.0.1",
+    "@actions/io": "^1.0.1"
+  }
+}
