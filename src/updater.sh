@@ -1,8 +1,10 @@
 #!/bin/bash
 
+set -e
+
 echo "[INFO] Install npm-check-updates"
 
-npm i -g npm-check-updates
+sudo npm i -g npm-check-updates
 
 cd $GITHUB_WORKSPACE
 
