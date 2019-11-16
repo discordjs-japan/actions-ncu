@@ -18,7 +18,7 @@ git remote set-url origin $REMOTE
 
 echo "Check for updates."
 
-ncu -u --packageFile package.json
+sudo ncu -u --packageFile package.json
 
 if [[ `git status --porcelain` ]]; then
   echo "Update found!"
