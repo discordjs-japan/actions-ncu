@@ -6,6 +6,9 @@
   "repository": "https://github.com/discordjs-japan/actions-ncu.git",
   "author": "Discord.js Japan",
   "license": "MIT",
+  "scripts": {
+    "build": "ncc build ./src/index.ts -m"
+  },
   "devDependencies": {
     "@types/node": "^12.12.8",
     "@zeit/ncc": "^0.20.5",
