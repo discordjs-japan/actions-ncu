@@ -16,16 +16,16 @@ git config user.name "DependenciesUpdater"
 git config user.email "InkoHX@users.noreply.github.com"
 git remote set-url origin $REMOTE
 
-echo "Check for updates."
+echo "[INFO] Check for updates."
 
 sudo ncu -u --packageFile package.json
 
-if [[ `git status --porcelain` ]]; then
-  echo "Update found!"
-  echo "Updating lock file..."
+if [[ `sudo git status --porcelain` ]]; then
+  echo "[INFO] Update found!"
+  echo "[INFO] Updating lock file..."
   sudo npm install
 
-  echo "Commit and Push"
+  echo "[INFO] Commit and Push"
   sudo git add .
   sudo git commit -m "Updated all dependencies"
   sudo git push origin HEAD:master
