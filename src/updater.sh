@@ -4,7 +4,7 @@ set -e
 
 echo "[INFO] Install npm-check-updates"
 
-sudo npm i -g npm-check-updates
+npm i -g npm-check-updates
 
 cd $GITHUB_WORKSPACE
 
@@ -18,7 +18,7 @@ git remote set-url origin $REMOTE
 
 echo "Check for updates."
 
-sudo ncu -u --packageFile package.json
+ncu -u --packageFile package.json
 
 if [[ `git status --porcelain` ]]; then
   echo "Update found!"
