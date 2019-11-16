@@ -1,10 +1,10 @@
 #!/bin/bash
 
-set -e
+set -eo pipefail
 
 echo "[INFO] Install npm-check-updates"
 
-npm i -g npm-check-updates
+sudo npm i -g npm-check-updates
 
 cd $GITHUB_WORKSPACE
 
@@ -18,15 +18,15 @@ git remote set-url origin $REMOTE
 
 echo "Check for updates."
 
-ncu -u --packageFile package.json
+sudo ncu -u --packageFile package.json
 
 if [[ `git status --porcelain` ]]; then
   echo "Update found!"
   echo "Updating lock file..."
-  npm install
+  sudo npm install
 
   echo "Commit and Push"
-  git add .
-  git commit -m "Updated all dependencies"
-  git push origin HEAD:master
+  sudo git add .
+  sudo git commit -m "Updated all dependencies"
+  sudo git push origin HEAD:master
 fi
